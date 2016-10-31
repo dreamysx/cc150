@@ -1,2 +1,2 @@
 # cc150
-Road to abe a programmer.
+Road to be a programmer.
