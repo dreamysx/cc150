@@ -1,0 +1,44 @@
+/**
+ * Created by dreamysx on 10/29/16.
+ */
+public class count2s {
+    int count(int num, int exp){
+        int num_of_two = 0;
+        int each_count = 1;
+        for (int j=1; j<=num; j++){
+            if (j%10 == 2){
+                num_of_two++;
+            }
+        }
+        for (int i = 1; i <= exp; i++){
+            each_count = each_count * 10;
+            for (int j=1; j<=num; j++) {
+                if ((j/each_count)%10 == 2) {
+                    num_of_two++;
+                }
+            }
+        }
+
+
+        return num_of_two;
+    }
+
+    int exp(int num){
+        int x = 1;
+        int exp = 0;
+        while(num/10>0){
+            num = num /10;
+            exp ++;
+        }
+        return exp;
+    }
+
+
+    public static void main(String[] args) {
+        count2s pj = new count2s();
+        int num = 87659;
+        int exp = pj.exp(num);
+        int result = pj.count(num, exp);
+        System.out.println(result);
+    }
+}
