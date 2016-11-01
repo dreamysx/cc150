@@ -1,0 +1,10 @@
+struct line{
+  double slope;
+  double yintersect;
+}//define a data struct to represent a line
+
+boolean{
+  const double epsilon = 0.0000001;
+  return abs(line1.slope - line2.slope) > epsilon ||
+          abs(line1.yintersect - line2.yintersect) < epsilon;
+}
