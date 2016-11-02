@@ -1,0 +1,18 @@
+struct line{Point start, Point end};
+
+Point middle(Square s){
+  return new Point((s.left+s.right)/2,(s.top+s.bottom)/2);
+}
+
+line cut(Square s, Square t){
+  middle_s = middle(s);
+  middle_t = middle(t);
+  if (middle_s == middle_t){
+    line.start = (s.left, s.top);
+    line.end = (s.right, s.bottom);
+  }
+  else{
+    line.start = middle_s;
+    line.end = middle_t;
+  }
+}
