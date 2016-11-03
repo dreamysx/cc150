@@ -1,0 +1,17 @@
+/*
+Considering that every 5 participating the multiply as a factor will contribute to one trailing zero.
+So 25 will contribute to two zeros since it is 5*5.
+*/
+int countTrailingZeros(int n){
+  int count = 0;
+  if(n < 0){
+    print("n factorial is not for negatives!");
+    count = 0;
+  }
+  else{
+    for (int i = 5; n / i > 0; i *= 5){
+    count += n / i;
+    }
+  }
+  return count;
+}
