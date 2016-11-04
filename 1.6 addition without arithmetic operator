@@ -1,0 +1,10 @@
+public class addition {
+    public static void main(String[] args) {
+        int i =594;
+        int j =23;
+        int base = i ^ j;
+        int advance = (i & j) << 1;
+        int res = base + advance;
+        System.out.println(res);
+    }
+}
