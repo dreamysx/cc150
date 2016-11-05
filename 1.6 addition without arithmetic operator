@@ -1,10 +1,15 @@
 public class addition {
-    public static void main(String[] args) {
-        int i =594;
-        int j =23;
+    int add(int i, int j){
+        if (j==0){return i;}
         int base = i ^ j;
         int advance = (i & j) << 1;
-        int res = base + advance;
+        return add(base, advance);
+    }
+    public static void main(String[] args) {
+        int i =0;
+        int j =23;
+        addition a = new addition();
+        int res = a.add(i, j);
         System.out.println(res);
     }
 }
