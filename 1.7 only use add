@@ -1,0 +1,94 @@
+public class addtooperator {
+    static boolean turnNeg(int i, int j){
+        if((i > 0 & j < 0)|(i < 0 & j > 0)){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    static int abs(int i){
+        if(i>=0){
+            return i;
+        }
+        else{
+            return ~i + 1;
+        }
+    }
+
+    int multiple(int i, int j){
+        int res = 0;
+        boolean sign = turnNeg(i,j);
+        i = abs(i);
+        j = abs(j);
+        if( i==0 | j==0){
+            return 0;
+        }
+        else{
+            for(int k=0; k<j; k++){
+                res += i;
+            }
+        }
+        if(sign){
+            return ~res + 1;
+        }
+        else {
+            return res;
+        }
+    }
+
+    int minus(int i, int j){
+        int res = 0;
+        res = i + (~j + 1);
+        /*
+        计算机内数据以补码形式存在，无论正负。
+        正数的原码反码补码都是自己；负数的反码是原码除符号位以外取反，补码是反码+1。
+        任何数所有位取反以后+1得到它的负数。
+        */
+        return res;
+    }
+
+    void deduct(int i, int j){
+
+        boolean sign = turnNeg(i,j);
+        if (j == 0){
+            System.out.println("You cannot deduct 0!");
+        }
+        else{
+            if(i == 0){
+                System.out.println("The result of minus is 0!");
+            }
+            else{
+                i = abs(i);
+                j = abs(j);
+                int count = 0;
+                int res = minus(i,j);
+                for (int k=1; res>=0; k++){
+                    res = minus(res,j);
+                    count += 1;
+                }
+                if (sign){
+                    System.out.println("The result of deduction is " + (~count+1) );
+                }
+                else{
+                    System.out.println("The result of deduction is " + count);
+                }
+            }
+
+        }
+    }
+
+    public static void main(String[] args) {
+        int i = 990;
+        int j = -9;
+        addtooperator a = new addtooperator();
+        int mu = a.multiple(i,j);
+        int mi = a.minus(i,j);
+        a.deduct(i,j);
+
+        System.out.println("The result of multiple is " + mu);
+        System.out.println("The result of minus is " + mi);
+
+    }
+}
