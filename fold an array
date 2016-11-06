@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ * Created by dreamysx on 11/6/16.
+ */
+public class foldanarray {
+    ArrayList create(){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Scanner input = new Scanner(System.in);
+        System.out.println("请输入数组（须为偶数个）：");
+        String str = input.nextLine();
+        String[] numList = str.split("\\s");
+        for (String s : numList) {
+            list.add(Integer.parseInt(s));
+        }
+        return list;
+    }
+
+    int[] generate(ArrayList<Integer> list){
+
+        int[] res = new int[list.size()];
+
+        for (int i=0; i<=list.size()/2-1; i++){
+            res[2*i] = list.get(i);
+        }
+        for (int i=0; i<=list.size()/2-1; i++){
+            res[2*i+1] = list.get(i+list.size()/2);
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        foldanarray pj = new foldanarray();
+        int[] res = pj.generate(pj.create());
+
+        for(int i=0; i < res.length; i++){
+            System.out.print(res[i]+" ");
+        }
+    }
+}
