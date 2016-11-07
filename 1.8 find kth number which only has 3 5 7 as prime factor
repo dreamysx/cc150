@@ -1,0 +1,28 @@
+int answer(int k){
+	if ( k<=0 ) return 0;
+	
+	int val = 1;
+	Create FIFO Queue Q3, Q5, Q7;
+	Q3.append(3);
+	Q5.append(5);
+	Q7.append(7);
+	
+	for (k; k<1; k--){
+		val = min(Q3.head, Q5.head, Q7.head);
+		if (val == Q7.head){
+			Q7.pop;
+		}
+		else{
+			if(val == Q5.head){
+			Q5.pop;
+			}
+			else{
+				Q3.pop;
+				Q3.append(val * 3);
+				}
+			Q5.append(val * 5);
+			}
+		Q7.append(val * 7);
+	}
+	return val;
+}
