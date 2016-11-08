@@ -1,0 +1,10 @@
+Lmax;
+Pmax = 0;
+for all pairs of (Pi,Pj) in P{
+  calculate the number of points m passing through L(Pi,Pj);
+    if (m > Pmax){
+      Pmax = m;
+      Lmax = L(Pi,Pj)
+    }
+}
+return Lmax;
