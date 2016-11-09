@@ -1,0 +1,13 @@
+Given elements (height, weight), sort them both from smallest to largest and get the longest sequence.
+Use heap-like structure:
+
+1. sort all elements based on height;
+2. say we want to insert element (h,w) to existing heap, 
+    we need to find all the leaves (h0,w0) with their w0<w, 
+    and insert (h,w) under the one with the longest path,
+    and delete all other nodes;
+3. if all the w0 in the leaves is >w, 
+    then go up and find the first weight <w with the longest path,
+    and insert (h,w) under the node,
+    then begin to insert next element;
+4. after all the elements are inserted, choose the longest sequence and return the ans.
