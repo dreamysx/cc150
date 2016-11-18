@@ -1,0 +1,18 @@
+Stirng rmdup(String str){
+  if(!String) return "input not string";
+  len = str.length();
+  if(len < 2) return "string too short to have duplicates";
+  int tail = 1;
+  
+  for(int i=1; i<len; i++){
+    for(int j=0; j<tail; j++){
+      if(str[i]==str[j]) break;
+    }
+    if(j==tail){
+      str[tail] = str[i];
+      tail ++;
+    }
+  }
+  str[tail]=0;
+  return str;
+}
