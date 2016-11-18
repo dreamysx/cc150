@@ -1,0 +1,22 @@
+String rmdup(String str){
+  if(!String) return "input not string";
+  len = str.length();
+  if(len<2) return"too short to have duplicates";
+  int tail = 1;
+  
+  boolean[] flag = new boolean[256];
+  for(int i=0; i<256; i++){
+    flag[i] = false;
+  }
+  flag[str[0]] = true;
+  
+  for(int i=1; i<len; i++){
+    if(!boolean[str[i]]){
+      str[tail] = str[i];
+      tail ++;
+      boolean[str[i]=true;
+    }
+  }
+  str[tail]=0;
+  return str;
+}
